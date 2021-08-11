@@ -13,12 +13,17 @@ namespace Bank2
         /// </summary>
         public Bank()
         {
-            //Give bankName a value
-            this.bankName = "*** Welcome To EUC Bank ***";
+            //Give variables a value
+            this.bankName = "*** Velkommen til EUC Banken ***";
+
+            this.bankName2 = "*** Velkommen til EUC Banken - Bank 2 ***";
         }
 
         //Public string bankName set to readonly
         public string bankName { get; }
+
+        //Readonly name of bank
+        public string bankName2 { get; }
 
 
         //Account varible
