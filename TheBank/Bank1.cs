@@ -2,11 +2,13 @@
 
 namespace TheBank
 {
-    class Program
+
+    //TODO: Create menue
+    class Bank
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 
@@ -16,21 +18,25 @@ namespace TheBank
 
     }
 
+    //TODO: Show saldo
     class Balance
     {
 
     }
 
+    //TODO: Deposit money to the account
     class Deposit
     {
 
     }
 
+    //TODO: Withdraw money from the account
     class Withdraw
     {
 
     }
 
+    //TODO: Add interest balance
     class Interests
     {
 
