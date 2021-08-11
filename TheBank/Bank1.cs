@@ -11,34 +11,4 @@ namespace TheBank
             
         }
     }
-
-    //TODO: Create Account
-    class Account
-    {
-
-    }
-
-    //TODO: Show saldo
-    class Balance
-    {
-
-    }
-
-    //TODO: Deposit money to the account
-    class Deposit
-    {
-
-    }
-
-    //TODO: Withdraw money from the account
-    class Withdraw
-    {
-
-    }
-
-    //TODO: Add interest balance
-    class Interests
-    {
-
-    }
 }
