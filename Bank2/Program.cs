@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Bank2
 {
     class Program
     {
-        
+        Account account;
+
         /// <summary>
         /// Bank choose Menu
         /// </summary>
@@ -17,6 +19,29 @@ namespace Bank2
         {
             //Call class bank
             Bank bank = new Bank();
+
+            //Write name of user
+            Console.WriteLine("Skriv name på bruger: ");
+            string name = Console.ReadLine();
+
+            //Call class account
+            bank.CreateAccount(name);
+            
+
+
+            ////////////////////////////////Start Of Menu//////////////////////////////////////////////////////////////
+                                                                                                                     //
+            //Write bank name                                                                                        //
+            Console.WriteLine(bank.bankName);                                                                        //
+                                                                                                                     //
+            //Write Name & Saldo                                                                                     //
+            Console.WriteLine($"Ny Konto oprettet til {bank.account.Name} med saldoen Kr. {bank.account.Balance}");  //
+                                                                                                                     //
+                                                                                                                     //
+            ////////////////////////////////End Of Menu////////////////////////////////////////////////////////////////
+
+            
+            Console.Clear();
 
             ////////////////////////////////Start Of Menu 2//////////////////////////////////////////////////
                                                                                                            //
@@ -50,6 +75,25 @@ namespace Bank2
 
                     //Create account
                 case "k":
+
+                    //Writ account name
+                    Console.WriteLine("Indtast kundens navn: ");
+                    string uName = Console.ReadLine();
+
+                    //Call class Account
+                    bank.CreateAccount(uName);
+
+                    //Show name & balance
+                    Console.WriteLine($"Ny konto oprettet til {uName} med saldoen Kr. {bank.account.Balance}");
+
+                    //Space
+                    Console.WriteLine("");
+
+                    //Continue
+                    Console.WriteLine("Press any key to continue...");
+                    Console.Read();
+
+                    Console.Clear();
 
                     break;
 
@@ -93,35 +137,11 @@ namespace Bank2
         /// Bank Menu
         /// </summary>
         public void Menu()
-        {
-            //String variable
-            string name = "Katja";
-
+        {          
             //Call class bank
             Bank bank = new Bank(); ;
 
-            //Call class account
-            Account acObj = bank.CreateAccount(name);
-
-
-            ////////////////////////////////Start Of Menu////////////////////////////////////////////////////
-                                                                                                           //
-            //Write bank name                                                                              //
-            Console.WriteLine(bank.bankName);                                                              //
-                                                                                                           //
-            //Write Name & Saldo                                                                           //
-            Console.WriteLine($"Ny Konto oprettet til {acObj.Name} med saldoen Kr. {acObj.Balance}");      //
-                                                                                                           //
-            //Write Saldo after deposit                                                                    //
-            Console.WriteLine($"kontoens saldo efter indsæt: Kr. {bank.Deposit(500)}");                    //
-                                                                                                           //
-            //Write Saldo after withdraw                                                                   //
-            Console.WriteLine($"Kontoens saldo efter hæv: Kr. {bank.Withdraw(300)}");                      //
-                                                                                                           //
-            //Write the saldo                                                                              //
-            Console.WriteLine($"Kontoens saldo: Kr. {acObj.Balance}");                                     //
-                                                                                                           //
-            ////////////////////////////////End Of Menu//////////////////////////////////////////////////////
+            
 
         }
     }

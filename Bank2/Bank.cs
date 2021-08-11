@@ -27,23 +27,20 @@ namespace Bank2
 
 
         //Account varible
-        Account account;
+        public Account account { get; private set; }
 
         /// <summary>
         /// Method for Creating account (name)
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Account CreateAccount(string name)
+        public void CreateAccount(string name)
         {
             //Fill Account Object
             Account acObj = new Account(name);
 
             //Account varible is equle to account object
-            account = acObj;
-
-            //Return Account varibal
-            return account;
+            this.account = acObj;
         }
 
 
