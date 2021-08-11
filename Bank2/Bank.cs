@@ -4,7 +4,7 @@ namespace Bank2
 {
 
 
-    //TODO: Create menue
+    
     class Bank
     {
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank2
 {
-    //TODO: Create Account
+    
     class Account
     {
 
