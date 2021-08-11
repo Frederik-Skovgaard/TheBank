@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bank1
+namespace Bank2
 {
 
 
