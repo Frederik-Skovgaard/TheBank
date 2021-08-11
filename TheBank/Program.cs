@@ -12,6 +12,8 @@ namespace TheBank
         {
             //Call class bank
             Bank bankClass = new Bank();
+         
+           
 
             //Write title to console
             Console.WriteLine(bankClass.bankName);
