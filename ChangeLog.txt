@@ -13,10 +13,26 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
-** [Bank 2] - 12-08-21
+
+
+** [Bank 2] - 11-08-21
 ***
 - Use methods for the new bank menu
 - Make a ny menu with more options
+
+*** Changed
+
+*** Removed
+
+
+
+** [Bank 3] - 12-08-21
+***
+- Method for showing all money in the bank
+- Account counter
+- list with all Accounts 
+- Account nummbers
+- Change menu to fit with new functionalitys
 
 *** Changed
 

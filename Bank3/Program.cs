@@ -7,8 +7,6 @@ using System.Threading;
 
 namespace Bank3
 {
-    //TODO: Change menu to fit with new functionalitys
-
     class Program
     {
         //Class Varibale
@@ -17,6 +15,7 @@ namespace Bank3
         static bool ShouldLoop = true;
 
         static string name;
+
 
         static void Main(string[] args)
         {
@@ -130,7 +129,7 @@ namespace Bank3
 
                 //Show bank
                 case ConsoleKey.B:
-
+                    Console.WriteLine(bank.BankSaldo);
                     break;
 
                 //Exit
@@ -182,7 +181,7 @@ namespace Bank3
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
 
             //Deposit the insertet money to account balance
-            Console.WriteLine(bank.Deposit(indtast, accountNum, name));
+            Console.WriteLine(bank.Deposit(indtast, accountNum));
 
             
         }
@@ -200,7 +199,7 @@ namespace Bank3
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
 
             //Withdraw the insertet money to account balance
-            Console.WriteLine(bank.Withdraw(indtast, accountNum, name));
+            Console.WriteLine(bank.Withdraw(indtast, accountNum));
         }
 
         /// <summary>
@@ -213,7 +212,7 @@ namespace Bank3
             int accountNum = Convert.ToInt32(Console.ReadLine());
 
             //Show balance of account
-            Console.WriteLine(bank.TotalBalance(accountNum, name));
+            Console.WriteLine(bank.TotalBalance(accountNum));
         }
 
         #endregion

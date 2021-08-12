@@ -5,10 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Bank3 
-{
-    
-    //TODO:list with all Accounts & and Account nummbers
-    
+{    
     class Account : Bank
     {
         //Readonly public string with the name of the account
