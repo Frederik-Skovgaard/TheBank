@@ -50,7 +50,7 @@ namespace Bank4
         public string CreateAccount(string name)
         {
             //Add account to list of accounts
-            acList.Add(new Account(name, accountNumberCounter));
+            //acList.Add(new Account(name, accountNumberCounter));
 
             //method for getting account
             account = FindAccount(accountNumberCounter);
