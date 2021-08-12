@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank3
+namespace Bank3 
 {
     
-    //TODO: Account counter, list with all Accounts & and Account nummbers
+    //TODO:list with all Accounts & and Account nummbers
     
     class Account
     {
+        //Readonly public string with the name of the account
+        public string Name { get; }
+
+        //Get, Set decimal of account balance
+        public decimal Balance { get; set; }
+
+        public int AccountCounter { get; set; }
 
         //Method for getting name and balance
         public Account(string name)
@@ -22,10 +29,6 @@ namespace Bank3
 
         
 
-        //Readonly public string with the name of the account
-        public string Name {get;}
-
-        //Get, Set decimal of account balance
-        public decimal Balance { get; set; }
+        
     }
 }

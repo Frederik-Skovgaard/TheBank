@@ -32,16 +32,12 @@ namespace Bank3
             //Loop bank menu
             while (ShouldLoop)
             {
-
                 try
                 {
-
                     Console.Clear();
 
                     //Bank Menu
                     BankTwoMenu();
-
-                   
 
                     if (ShouldLoop)
                     {
@@ -49,6 +45,7 @@ namespace Bank3
                         ToContinue();
                     }
                 }
+                //Writ custome error message on error
                 catch (Exception e)
                 {
                     Console.Clear();

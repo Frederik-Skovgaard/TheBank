@@ -3,8 +3,8 @@
 namespace Bank3
 {
 
-    //TODO: Method for showing all money in the bank
-    
+    //TODO: Method for showing all money in the bank, Account counter
+
     class Bank
     {
 
@@ -36,6 +36,8 @@ namespace Bank3
         /// <returns></returns>
         public void CreateAccount(string name)
         {
+
+
             //Fill Account Object
             Account acObj = new Account(name);
 
