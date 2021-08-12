@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [vers.exmp] - date.empl
+## [Bank 1] - 11-08-21
 ### Added
 - Create Account
 - Create menue
@@ -13,3 +13,11 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
+** [Bank 2] - 12-08-21
+***
+- Use methods for the new bank menu
+- Make a ny menu with more options
+
+*** Changed
+
+*** Removed

@@ -7,6 +7,7 @@ using System.Threading;
 
 namespace Bank2
 {
+    
     class Program
     {
         //Class Varibale
