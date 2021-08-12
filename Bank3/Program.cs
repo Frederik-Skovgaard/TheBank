@@ -16,6 +16,8 @@ namespace Bank3
 
         static bool ShouldLoop = true;
 
+        static string name;
+
         static void Main(string[] args)
         {
             //Call class bank
@@ -23,7 +25,7 @@ namespace Bank3
 
             //Write name of user
             Console.Write("Skriv name på bruger: ");
-            string name = Console.ReadLine();
+            name = Console.ReadLine();
 
             //Call class account
             bank.CreateAccount(name);
@@ -163,7 +165,7 @@ namespace Bank3
             bank.CreateAccount(name);
 
             //Show name & balance
-            Console.WriteLine($"Ny konto oprettet til {name} med saldoen {bank.account.Balance:c}");
+            Console.WriteLine();
 
         }
         /// <summary>
@@ -171,30 +173,34 @@ namespace Bank3
         /// </summary>
         static void Deposit()
         {
+            //Show specific acconunt
+            Console.Write("Indtast kontonummer: ");
+            int accountNum = Convert.ToInt32(Console.ReadLine());
+
             //read info from user
             Console.Write("Indtast beløb, der sakl indsættets: ");
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
 
             //Deposit the insertet money to account balance
-            bank.Deposit(indtast);
+            Console.WriteLine(bank.Deposit(indtast, accountNum, name));
 
-            //Show account balance after deposit
-            Console.WriteLine($"Konteons saldo efter indsæt: {bank.account.Balance:c}");
+            
         }
         /// <summary>
         /// Withdraw money from account
         /// </summary>
         static void Withdraw()
         {
+            //Show specific acconunt
+            Console.Write("Indtast kontonummer: ");
+            int accountNum = Convert.ToInt32(Console.ReadLine());
+
             //Read info from user
             Console.Write($"Indtast beløb, der skal hæves: ");
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
 
             //Withdraw the insertet money to account balance
-            bank.Withdraw(indtast);
-
-            //Show account balance after Withdraw
-            Console.WriteLine($"Kontoens saldo efter hæv: {bank.account.Balance:c}");
+            Console.WriteLine(bank.Withdraw(indtast, accountNum, name));
         }
 
         /// <summary>
@@ -202,9 +208,17 @@ namespace Bank3
         /// </summary>
         static void ShowBalance()
         {
-            Console.WriteLine($"Kontoens saldo: {bank.account.Balance:c}");
+            //Show specific acconunt
+            Console.Write("Indtast kontonummer: ");
+            int accountNum = Convert.ToInt32(Console.ReadLine());
+
+            //Show balance of account
+            Console.WriteLine(bank.TotalBalance(accountNum, name));
         }
+
         #endregion
+
+
         #region Pratical
         /// <summary>
         /// Method for ending transaction's
@@ -216,7 +230,7 @@ namespace Bank3
 
             //Continue
             Console.WriteLine("Press any key to continue...");
-            Console.Read();
+            Console.ReadKey();
 
             //Clear console
             Console.Clear();

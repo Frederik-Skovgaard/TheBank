@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Bank3
 {
@@ -7,42 +8,56 @@ namespace Bank3
 
     class Bank
     {
-
-        /// <summary>
-        /// Method for getting/initializing bankName
-        /// </summary>
-        public Bank()
-        {
-            //Give variables a value
-            this.bankName = "*** Velkommen til EUC Banken ***";
-
-            this.bankName2 = "*** Velkommen til EUC Banken - Bank 2 ***";
-        }
-
         //Public string bankName set to readonly
         public string bankName { get; }
 
         //Readonly name of bank
         public string bankName2 { get; }
 
-
         //Account varible
         public Account account { get; private set; }
+
+        
+
+        //Account List
+        public List<Account> acList;
+
+        int accountNumberCounter = 1;
+
+        /// <summary>
+        /// Method for getting/initializing bankName
+        /// </summary>
+        public Bank()
+        {
+
+            //Give variables a value
+            this.bankName = "*** Velkommen til EUC Banken ***";
+
+            this.bankName2 = "*** Velkommen til EUC Banken - Bank 2 ***";
+
+            acList = new List<Account>();
+
+        }
+
+
 
         /// <summary>
         /// Method for Creating account (name)
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public void CreateAccount(string name)
+        public string CreateAccount(string name)
         {
+            //Add account to list of accounts
+            acList.Add(new Account(name, accountNumberCounter));
 
+            //method for getting account
+            account = FindAccount(accountNumberCounter, name);
 
-            //Fill Account Object
-            Account acObj = new Account(name);
+            accountNumberCounter++;
 
-            //Account varible is equle to account object
-            this.account = acObj;
+            return $"Ny konto oprettet til {name} med saldoen {account.Balance:c}";
+
         }
 
 
@@ -51,13 +66,16 @@ namespace Bank3
         /// </summary>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public decimal Deposit(decimal amount)
+        public string Deposit(decimal amount, int accountNum, string name)
         {
+            //method for getting account
+            account = FindAccount(accountNum, name);
+
             //Account balance is equle to account balance + amount of deposit money
-            account.Balance = account.Balance + amount;
+            account.Balance += amount;
 
             //Return how much money has been added to account
-            return account.Balance;
+            return $"Konteons saldo efter indsæt: {account.Balance:c}";
         }
 
         /// <summary>
@@ -65,25 +83,65 @@ namespace Bank3
         /// </summary>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public decimal Withdraw(decimal amount)
+        public string Withdraw(decimal amount, int accountNum, string name)
         {
+            //method for getting account
+            account = FindAccount(accountNum, name);
+
+
             //Account balance is equle to account balance - amount of witdrawed money
-            account.Balance = account.Balance - amount;
+            do
+            {
+                //If amount is less then balance no problem
+                if (amount <= account.Balance)
+                {
+                    account.Balance -= amount;
+                    break;
+                }
+                //If amount is bigger then balance try agin
+                else if (amount > account.Balance)
+                {
+                    Console.WriteLine("You don't have enough money");
+                    Console.WriteLine("");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                }
+            } while (true);
+
+            
 
             //Return amount of money felt in bank
-            return account.Balance;
+            return $"Kontoens saldo efter hæv: {account.Balance:c}";
+        }
+
+        public string TotalBalance(int accountNum, string name)
+        {
+            //method for getting account
+            account = FindAccount(accountNum, name);
+
+            return $"Kontoens saldo: {account.Balance:c}";
         }
 
         /// <summary>
-        /// Method for returning account balance
+        /// Method for getting account
         /// </summary>
+        /// <param name="accountNum"></param>
+        /// <param name="name"></param>
         /// <returns></returns>
-        public decimal Balance()
+        public Account FindAccount(int accountNum, string name)
         {
-            //Return account balance
-            return account.Balance;
+
+            //Account finder from nummber
+            Account account = acList.Find(l => l._AccountNummber == accountNum );
+
+            return account;
         }
 
+        public decimal BankSaldo()
+        {
+            
 
+            return 12123.213213;
+        }
     }
 }
