@@ -30,21 +30,23 @@ namespace Bank2
             //Loop bank menu
             while (ShouldLoop)
             {
+
                 try
                 {
+
                     Console.Clear();
 
                     //Bank Menu
                     BankTwoMenu();
 
-                    Console.Clear();
+                   
 
                     if (ShouldLoop)
                     {
                         //Press any key to continue
                         ToContinue();
                     }
-                } 
+                }
                 catch (Exception e)
                 {
                     Console.Clear();
@@ -102,17 +104,27 @@ namespace Bank2
 
                 //Deposit money
                 case ConsoleKey.I:
+
+                    Console.Clear();
+
                     Deposit();
                     break;
 
                 //Withdraw money
                 case ConsoleKey.H:
+
+                    Console.Clear();
+
                     Withdraw();
                     break;
 
                 //Show balance
                 case ConsoleKey.S:
-                    Console.WriteLine($"Kontoens saldo: {bank.account.Balance:c}");
+
+                    Console.Clear();
+
+                    ShowBalance();
+                    
                     break;
 
                 //Show bank
@@ -122,6 +134,8 @@ namespace Bank2
 
                 //Exit
                 case ConsoleKey.X:
+
+                    Console.Clear();
 
                     //Close Console
                     Environment.Exit(0);
@@ -151,6 +165,7 @@ namespace Bank2
 
             //Show name & balance
             Console.WriteLine($"Ny konto oprettet til {name} med saldoen {bank.account.Balance:c}");
+
         }
         /// <summary>
         /// Method for depositing money
@@ -173,7 +188,7 @@ namespace Bank2
         static void Withdraw()
         {
             //Read info from user
-            Console.WriteLine($"Indtast beløb, der skal hæves: ");
+            Console.Write($"Indtast beløb, der skal hæves: ");
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
 
             //Withdraw the insertet money to account balance
@@ -181,6 +196,14 @@ namespace Bank2
 
             //Show account balance after Withdraw
             Console.WriteLine($"Kontoens saldo efter hæv: {bank.account.Balance:c}");
+        }
+
+        /// <summary>
+        /// Shows account balance
+        /// </summary>
+        static void ShowBalance()
+        {
+            Console.WriteLine($"Kontoens saldo: {bank.account.Balance:c}");
         }
         #endregion
         #region Pratical
