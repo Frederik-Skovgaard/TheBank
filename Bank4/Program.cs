@@ -16,18 +16,37 @@ namespace Bank4
 
         static string name;
 
+        static AccountType accountType;
+
+        static ConsoleKey acType;
+
 
         static void Main(string[] args)
         {
             //Call class bank
-            bank = new Bank();
+            bank = new Bank("*** Velkommen til EUC Bank 4 ***");
 
             //Write name of user
             Console.Write("Skriv name på bruger: ");
             name = Console.ReadLine();
 
+            Console.WriteLine("");
+
+            //Choose account type
+            Console.WriteLine("Konto type: \n(1) Checking Konto\n(2) Savings Konto\n(3) MasterCard Konto");
+            acType = Console.ReadKey().Key;
+
+            accountType = AccountChoose(acType);
+
             //Call class account
-            bank.CreateAccount(name);
+            bank.CreateAccount(name, accountType);
+
+            Console.Clear();
+
+            //Show Account info
+            Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
+
+            ToContinue();
 
 
             //Loop bank menu
@@ -67,7 +86,7 @@ namespace Bank4
             ////////////////////////////////Start Of Menu 2//////////////////////////////////////////////////
                                                                                                            //
             //Write bank name 2                                                                            //
-            Console.WriteLine(bank.bankName2);                                                             //
+            Console.WriteLine(bank.bankName);                                                             //
                                                                                                            //
             //Enter a key                                                                                  //
             Console.WriteLine("Vælg venligst...");                                                         //
@@ -76,6 +95,7 @@ namespace Bank4
             Console.WriteLine("k = Konto oprettes");                                                       //
             Console.WriteLine("i = Indsæt");                                                               //
             Console.WriteLine("h = Hæv beløb");                                                            //
+            Console.WriteLine("r = Rentetilskrivning");                                                    //
             Console.WriteLine("s = Vis saldo");                                                            //
             Console.WriteLine("b = Vis bank");                                                             //
             Console.WriteLine("x = Afslut");                                                               //
@@ -83,7 +103,7 @@ namespace Bank4
             //Read the next key press                                                                      //
             var readKey = Console.ReadKey().Key;                                                           //
                                                                                                            //
-             ////////////////////////////////End Of Menu 2////////////////////////////////////////////////////
+             ////////////////////////////////End Of Menu 2///////////////////////////////////////////////////
 
 
             //Switch for the indiviual key pressed
@@ -116,6 +136,14 @@ namespace Bank4
                     Console.Clear();
 
                     Withdraw();
+                    break;
+
+                case ConsoleKey.R:
+
+                    Console.Clear();
+
+                    Rentetilskrivning();
+
                     break;
 
                 //Show balance
@@ -160,13 +188,25 @@ namespace Bank4
             Console.Write("Indtast kundens navn: ");
             string name = Console.ReadLine();
 
+            Console.WriteLine("");
+
+            //Choose account type
+            Console.WriteLine("Konto type: \n(1) Checking Konto\n(2) Savings Konto\n(3) MasterCard Konto");
+            acType = Console.ReadKey().Key;
+
+            accountType = AccountChoose(acType);
+
+            Console.Clear();
+
+            //Show Account info
+            Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
+
             //Call class Account
-            bank.CreateAccount(name);
-
-            //Show name & balance
-            Console.WriteLine();
-
+            bank.CreateAccount(name, accountType);
         }
+
+
+
         /// <summary>
         /// Method for depositing money
         /// </summary>
@@ -177,14 +217,18 @@ namespace Bank4
             int accountNum = Convert.ToInt32(Console.ReadLine());
 
             //read info from user
-            Console.Write("Indtast beløb, der sakl indsættets: ");
+            Console.Write("Indtast beløb, der skal indsættets: ");
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
+
+            Console.WriteLine("");
 
             //Deposit the insertet money to account balance
             Console.WriteLine(bank.Deposit(indtast, accountNum));
 
+            Console.WriteLine("");
             
         }
+        
         /// <summary>
         /// Withdraw money from account
         /// </summary>
@@ -197,6 +241,8 @@ namespace Bank4
             //Read info from user
             Console.Write($"Indtast beløb, der skal hæves: ");
             decimal indtast = Convert.ToDecimal(Console.ReadLine());
+
+            Console.WriteLine("");
 
             //Withdraw the insertet money to account balance
             Console.WriteLine(bank.Withdraw(indtast, accountNum));
@@ -211,8 +257,22 @@ namespace Bank4
             Console.Write("Indtast kontonummer: ");
             int accountNum = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("");
+
             //Show balance of account
             Console.WriteLine(bank.TotalBalance(accountNum));
+        }
+
+        /// <summary>
+        /// Method for executing charged interest
+        /// </summary>
+        static void Rentetilskrivning()
+        {
+           
+            Console.WriteLine("Renter er tilskrevet");
+
+            //Method for charing interest
+            bank.ChargeInterest();
         }
 
         #endregion
@@ -233,6 +293,36 @@ namespace Bank4
 
             //Clear console
             Console.Clear();
+        }
+
+        /// <summary>
+        /// Method for chossing account type
+        /// </summary>
+        /// <param name="acType"></param>
+        /// <returns></returns>
+        static AccountType AccountChoose(ConsoleKey acType)
+        {
+            //Switch for choosing account type
+            switch (acType)
+            {
+                case ConsoleKey.D1:
+                    accountType = AccountType.CheckingAccount;
+                    break;
+
+                case ConsoleKey.D2:
+                    accountType = AccountType.SavingsAccount;
+                    break;
+
+                case ConsoleKey.D3:
+                    accountType = AccountType.MasterCardAccount;
+                    break;
+
+                default:
+                    break;
+            }
+
+            //Return Account Type
+            return accountType;
         }
         #endregion
     }
