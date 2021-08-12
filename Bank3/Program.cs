@@ -7,7 +7,8 @@ using System.Threading;
 
 namespace Bank3
 {
-    
+    //TODO: Change menu to fit with new functionalitys
+
     class Program
     {
         //Class Varibale

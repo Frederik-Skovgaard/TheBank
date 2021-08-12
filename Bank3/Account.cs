@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Bank3
 {
     
+    //TODO: Account counter, list with all Accounts & and Account nummbers
     
     class Account
     {
