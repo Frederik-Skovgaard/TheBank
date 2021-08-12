@@ -20,7 +20,7 @@ namespace Bank3
         static void Main(string[] args)
         {
             //Call class bank
-            bank = new Bank();
+            bank = new Bank("*** Velkomen til EUC Bank 3 ***");
 
             //Write name of user
             Console.Write("Skriv name på bruger: ");
@@ -67,7 +67,7 @@ namespace Bank3
             ////////////////////////////////Start Of Menu 2//////////////////////////////////////////////////
                                                                                                            //
             //Write bank name 2                                                                            //
-            Console.WriteLine(bank.bankName2);                                                             //
+            Console.WriteLine(bank.bankName);                                                             //
                                                                                                            //
             //Enter a key                                                                                  //
             Console.WriteLine("Vælg venligst...");                                                         //

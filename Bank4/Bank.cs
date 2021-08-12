@@ -9,16 +9,11 @@ namespace Bank4
         //Public string bankName set to readonly
         public string bankName { get; }
 
-        //Readonly name of bank
-        public string bankName2 { get; }
-
         //Account varible
         public Account account { get; private set; }
 
         //Total sum of money in bank
         public decimal BankSaldo => acList.Sum(x => x.Balance);
-
-
 
         //Account List
         public List<Account> acList;
@@ -28,13 +23,10 @@ namespace Bank4
         /// <summary>
         /// Method for getting/initializing bankName
         /// </summary>
-        public Bank()
+        public Bank(string name)
         {
-
-            //Give variables a value
-            this.bankName = "*** Velkommen til EUC Banken ***";
-
-            this.bankName2 = "*** Velkommen til EUC Banken - Bank 2 ***";
+            
+            this.bankName = name;
 
             acList = new List<Account>();
 
@@ -47,18 +39,40 @@ namespace Bank4
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public string CreateAccount(string name)
+        public string CreateAccount(string name, AccountType accountType)
         {
-            //Add account to list of accounts
-            //acList.Add(new Account(name, accountNumberCounter));
+            //Switch for creating specific account type
+            switch (accountType)
+            {
+                //Checkings account
+                case AccountType.CheckingAccount:
+                    account = new CheckingAccount(name, accountNumberCounter);
+                    acList.Add(account);
+                    break;
+
+                    //Savings account
+                case AccountType.SavingsAccount:
+                    account = new SavingsAccount(name, accountNumberCounter);
+                    acList.Add(account);
+                    break;
+
+                    //MasterCard account
+                case AccountType.MasterCardAccount:
+                    account = new MasterCardAccount(name, accountNumberCounter);
+                    acList.Add(account);
+                    break;
+                default:
+                    break;
+            }
+
 
             //method for getting account
             account = FindAccount(accountNumberCounter);
 
             accountNumberCounter++;
 
-            return $"Ny konto oprettet til {name} med saldoen {account.Balance:c}";
-
+            return $"Ny {account.AccountType} oprettet til {name} med saldoen {account.Balance:c}";
+            
         }
 
 
@@ -69,14 +83,23 @@ namespace Bank4
         /// <returns></returns>
         public string Deposit(decimal amount, int accountNum)
         {
-            //method for getting account
-            account = FindAccount(accountNum);
+            //Validates account nummber
+            try
+            {
+                //method for getting account
+                account = FindAccount(accountNum);
 
-            //Account balance is equle to account balance + amount of deposit money
-            account.Balance += amount;
+                //Account balance is equle to account balance + amount of deposit money
+                account.Balance += amount;
 
-            //Return how much money has been added to account
-            return $"Konteons saldo efter indsæt: {account.Balance:c}";
+                //Return how much money has been added to account
+                return $"Konteons saldo efter indsæt: {account.Balance:c}";
+            }
+            catch (Exception)
+            {
+                return "Dette konto numer eksisterer ikke...";
+            }
+            
         }
 
         /// <summary>
@@ -86,44 +109,55 @@ namespace Bank4
         /// <returns></returns>
         public string Withdraw(decimal amount, int accountNum)
         {
-            //method for getting account
-            account = FindAccount(accountNum);
-
-
-            //Account balance is equle to account balance - amount of witdrawed money
-            do
+            //Validates account nummber
+            try
             {
-                //If amount is less then balance no problem
-                if (amount <= account.Balance)
+                //method for getting account
+                account = FindAccount(accountNum);
+
+                //Account balance is equle to account balance - amount of witdrawed money
+                do
                 {
-                    account.Balance -= amount;
-                    break;
-                }
-                //If amount is bigger then balance try agin
-                else if (amount > account.Balance)
-                {
-                    Console.WriteLine("You don't have enough money");
-                    Console.WriteLine("");
-                    Console.WriteLine("Press any key to continue");
-                    Console.ReadKey();
-
-                    Console.Clear();
-                    break;
-                }
-            } while (true);
+                    //If amount is less then balance no problem
+                    if (amount <= account.Balance)
+                    {
+                        account.Balance -= amount;
+                        break;
+                    }
+                    //If amount is bigger then balance try agin
+                    else if (amount > account.Balance)
+                    {
+                        return $"Du har ikke nok penge på kontoen";
+                    }
+                } while (true);
 
 
-
-            //Return amount of money felt in bank
-            return $"Kontoens saldo efter hæv: {account.Balance:c}";
+                //Return amount of money felt in bank
+                return $"Kontoens saldo efter hæv: {account.Balance:c}";
+            }
+            catch (Exception)
+            {
+                return "Dette konto numer eksisterer ikke...";
+            }
+            
         }
 
         public string TotalBalance(int accountNum)
         {
-            //method for getting account
-            account = FindAccount(accountNum);
+            //Validates account nummber
+            try
+            {
+                //method for getting account
+                account = FindAccount(accountNum);
 
-            return $"Kontoens saldo: {account.Balance:c}";
+                return $"Kontoens saldo: {account.Balance:c}";
+            }
+            catch (Exception)
+            {
+                return "Dette konto numer eksisterer ikke...";
+            }
+
+            
         }
 
         /// <summary>
@@ -134,12 +168,21 @@ namespace Bank4
         /// <returns></returns>
         public Account FindAccount(int accountNum)
         {
-
             //Account finder from nummber
             Account account = acList[acList.FindIndex(l => l._AccountNummber == accountNum)];
-
-
             return account;
+        }
+       
+
+        /// <summary>
+        /// Method for calculating interest
+        /// </summary>
+        public void ChargeInterest()
+        {
+            foreach (Account account in acList)
+            {
+                account.ChargeInterest();
+            }            
         }
 
 

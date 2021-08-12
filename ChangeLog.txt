@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Bank 1] - 11-08-21
 ### Added
-- Create Account
-- Create menue
-- Create Bank
+[x] Create Account
+[x] Create menue
+[x] Create Bank
 
 ### Changed
 
@@ -16,24 +16,25 @@ All notable changes to this project will be documented in this file.
 
 
 ** [Bank 2] - 11-08-21
-***
-- Use methods for the new bank menu
-- Make a ny menu with more options
+### Added
+[x] Use methods for the new bank menu
+[x] Make a ny menu with more options
 
-*** Changed
+### Changed
 
-*** Removed
+### Removed
 
 
 
 ** [Bank 3] - 12-08-21
-***
-- Method for showing all money in the bank
-- Account counter
-- list with all Accounts 
-- Account nummbers
-- Change menu to fit with new functionalitys
+### Added
+[x] Method for showing all money in the bank
+[x] Account counter
+[x] list with all Accounts 
+[x] Account nummbers
 
-*** Changed
 
-*** Removed
+### Changed
+[x] Change menu to fit with new functionalitys
+
+### Removed

@@ -9,9 +9,6 @@ namespace Bank3
         //Public string bankName set to readonly
         public string bankName { get; }
 
-        //Readonly name of bank
-        public string bankName2 { get; }
-
         //Account varible
         public Account account { get; private set; }
 
@@ -28,13 +25,10 @@ namespace Bank3
         /// <summary>
         /// Method for getting/initializing bankName
         /// </summary>
-        public Bank()
+        public Bank(string bankName)
         {
 
-            //Give variables a value
-            this.bankName = "*** Velkommen til EUC Banken ***";
-
-            this.bankName2 = "*** Velkommen til EUC Banken - Bank 2 ***";
+            this.bankName = bankName;
 
             acList = new List<Account>();
 

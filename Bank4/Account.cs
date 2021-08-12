@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Bank4
 {    
-    abstract class Account : Bank
+    enum AccountType { CheckingAccount, SavingsAccount, MasterCardAccount }
+
+    abstract class Account
     {
         //Readonly public string with the name of the account
-        public string Name { get; }
+        public string Name { get; set; }
 
         //Get, Set decimal of account balance
         public decimal Balance { get; set; }
 
         //Account's identifyer 
-        public int _AccountNummber { get; }
+        public int _AccountNummber { get; set; }
 
+        //Account Type
+        public AccountType AccountType { get; set; }
 
         /// <summary>
         /// Charg interst method 
@@ -25,7 +29,7 @@ namespace Bank4
 
     }
 
-    abstract class CheckingAccount : Account
+    class CheckingAccount : Account
     {
         /// <summary>
         /// Checking account 
@@ -38,11 +42,12 @@ namespace Bank4
 
         public CheckingAccount(string name, int accountNummber)
         {
-            
+            this.Name = name;
+            this._AccountNummber = accountNummber;
         }
     }
 
-    abstract class SavingsAccount : Account
+    class SavingsAccount : Account
     {
         /// <summary>
         /// Saving account 
@@ -70,12 +75,13 @@ namespace Bank4
 
         public SavingsAccount(string name, int accountNummber)
         {
-            
+            this.Name = name;
+            this._AccountNummber = accountNummber;
         }
 
     }
 
-    abstract class MasterCardAccount : Account
+    class MasterCardAccount : Account
     {
         /// <summary>
         /// MasterCard account 
@@ -101,7 +107,8 @@ namespace Bank4
 
         public MasterCardAccount(string name, int accountNummber)
         {
-            
+            this.Name = name;
+            this._AccountNummber = accountNummber;
         }
 
     }
