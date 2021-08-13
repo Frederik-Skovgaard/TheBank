@@ -46,20 +46,17 @@ namespace Bank4
             {
                 //Checkings account
                 case AccountType.CheckingAccount:
-                    account = new CheckingAccount(name, accountNumberCounter);
-                    acList.Add(account);
+                    acList.Add(new CheckingAccount(name, accountNumberCounter));
                     break;
 
                     //Savings account
                 case AccountType.SavingsAccount:
-                    account = new SavingsAccount(name, accountNumberCounter);
-                    acList.Add(account);
+                    acList.Add(new SavingsAccount(name, accountNumberCounter));
                     break;
 
                     //MasterCard account
                 case AccountType.MasterCardAccount:
-                    account = new MasterCardAccount(name, accountNumberCounter);
-                    acList.Add(account);
+                    acList.Add(new MasterCardAccount(name, accountNumberCounter));
                     break;
                 default:
                     break;

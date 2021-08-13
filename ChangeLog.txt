@@ -5,36 +5,44 @@ All notable changes to this project will be documented in this file.
 
 ## [Bank 1] - 11-08-21
 ### Added
-[x] Create Account
-[x] Create menue
-[x] Create Bank
-
-### Changed
-
-### Removed
+- [x] Create Account.
+- [x] Create menue.
+- [x] Create Bank.
 
 
 
-** [Bank 2] - 11-08-21
+## [Bank 2] - 11-08-21
 ### Added
-[x] Use methods for the new bank menu
-[x] Make a ny menu with more options
-
-### Changed
+- [x] Use methods for the new bank menu.
+- [x] made a new menu with more options.
 
 ### Removed
+- [x] Old bank menu
 
 
 
-** [Bank 3] - 12-08-21
+## [Bank 3] - 12-08-21
 ### Added
-[x] Method for showing all money in the bank
-[x] Account counter
-[x] list with all Accounts 
-[x] Account nummbers
+- [x] Method for showing all money in the bank.
+- [x] Account counter.
+- [x] list with all Accounts.
+- [x] Account nummbers.
 
 
 ### Changed
-[x] Change menu to fit with new functionalitys
+- [x] Change menu to fit with new functionalitys.
 
-### Removed
+
+
+## [Bank 4] - 12-08-21
+### Added
+- [x] Add interest rates to specific account types 
+- [x] Add account types 
+
+### Changed
+- [x] Add new option on bank menu
+- [x] Change account class to an abstract
+- [x] Change CreateAccount method to take account type
+
+### Removed 
+- [x] Account constructoren removed

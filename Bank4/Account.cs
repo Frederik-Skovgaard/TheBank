@@ -37,7 +37,7 @@ namespace Bank4
         public override void ChargeInterest()
         {
             //Gain 0.5 procent interest
-            this.Balance = Balance / 100 * 0.5M;
+            this.Balance = Balance * 1.005M;
         }
 
         public CheckingAccount(string name, int accountNummber)
@@ -55,21 +55,21 @@ namespace Bank4
         public override void ChargeInterest()
         {
             //If acount under 50 Kr. 1 procent Interest
-            if (Balance < 50)
+            if (Balance < 50000)
             {
-                this.Balance = this.Balance / 100 * 1;
+                this.Balance = this.Balance * 1.01M;
             }
 
             //If account under 100 Kr. 2 procent interest
-            else if (Balance < 100)
+            else if (Balance < 100000)
             {
-                this.Balance = this.Balance / 100 * 2;
+                this.Balance = this.Balance * 1.02M;
             }
 
             //If account over 100 Kr. 3 procent interest
-            else if (Balance > 100)
+            else if (Balance > 100000)
             {
-                this.Balance = this.Balance / 100 * 3;
+                this.Balance = this.Balance * 1.03M;
             }
         }
 
@@ -89,16 +89,16 @@ namespace Bank4
         public override void ChargeInterest()
         {
             //If balance abov 0 get 0.1 procent interest
-            if (Balance >= 0)
+            if (Balance > 0)
             {
                 //Gain a 0.1 procent of account balance
-                this.Balance = this.Balance / 100 * 0.1M;
+                this.Balance = this.Balance * 1.001M;
             }
 
             //If balance in minus pay 20% of balance to bank
             else if (Balance < 0)
             {
-                decimal minus = Balance / 100 * 20;
+                decimal minus = Balance * 1.2M;
 
                 //Loss 20 procent of account balance
                 this.Balance = this.Balance - minus;
