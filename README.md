@@ -3,6 +3,17 @@ This is a console based project, that aims to simulate a bank.
 
 The purpose of this project is to show, that i can document my projects
 
+# Links
+### Change Log Updates
+[Bank 1](#Bank-1)
+
+[Bank 2](#Bank-2)
+
+[Bank 3](#Bank-3)
+
+[Bank 4](#Bank-4)
+
+[Bank 5](#Bank-5)
 
 # Menu
 ### Vælg venligst
