@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Bank5
+namespace Repository.Bank5
 {
     class Bank
     {
