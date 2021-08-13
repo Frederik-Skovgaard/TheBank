@@ -1,22 +1,81 @@
-# TheBank
-### The Bank is a console based project that aims to simulate a bank
+# Introduction
+This is a console based project, that aims to simulate a bank.
+
+The purpose of this project is to show, that i can document my projects
 
 
-# How to use
-1. Create an account by writting a name, and chossing an aacount type.
-1. Now you can choose to create new account
-1. Deposit money in to specific account
-1. Withdraw money from specific account
-1. Run interests threw all accounts 
-1. Show account balance
-1. Show all the money that is in the bank currently
-1. Close the console propmpt
+# Menu
+### Vælg venligst
+
+#### m = menue 
+- Dosen't have a function yet
+
+#### k = Konto oprettes 
+- Create a new account
+
+#### i = Indsæt
+- Deposit money into selected account
+
+#### h = Hæv beløb
+- Withdraw money from selected account
+
+#### r = Rentetilskrivning
+- Go threw all account and add/withdraw interest
+
+#### s = Vis saldo
+- Show the balance of selected account
+
+#### b = Vis bank
+- Show the collected balance in the bank
+
+## Method used
+### CreateAccount()
+- CreateAccount method uses parameters Name & AccountType
+
+- from that adds the new account to an Account list
+
+
+
+### Deposit()
+- Deposit Method finds the account with the use of its parameter accountNum
+
+- from that it takes the account balance and adds the amount parameter
+
+
+
+### Withdraw()
+- Withdraw Method finds the account with the use of its parameter accountNum
+
+- from that it take the account balance and subtracts the amount parameter
+
+
+
+### ShowBalance()
+- ShowBalance Method finds the account with its use of its paraneter accountNum
+
+- from that it can take the specific accounts balance and return a string
+
+
+
+### ChargeInterest()
+- ChargeInterest Method runs threw the account list and subtract/adds 
+
+- money according to this sheet
+
+> Checking Account: an account that give 0.5% in interest no matter the circumstances
+
+> Savings Account: a savings account that give
+> * 1% if balance is under 50 000 Kr.
+> * 2% if balance is under 100 000 Kr.
+> * 3% if balance is over 100 000 Kr.
+
+> Consumer Account: a accoount give 0,1% interest, but cost 20% if balance is negetiv
 
 
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+# [Unreleased]
 
 ## [Bank 1] - 11-08-21
 ### Added
