@@ -54,22 +54,22 @@ namespace Bank4
         /// </summary>
         public override void ChargeInterest()
         {
-            //If acount under 50 Kr. 1 procent Interest
+            //If acount under 50 000 Kr. 1 procent Interest
             if (Balance < 50000)
             {
-                this.Balance = this.Balance * 1.01M;
+                Balance *= 1.01M;
             }
 
-            //If account under 100 Kr. 2 procent interest
-            else if (Balance < 100000)
+            //If account under 100 000 Kr. 2 procent interest
+            else if (Balance <= 100000)
             {
-                this.Balance = this.Balance * 1.02M;
+                Balance *= 1.02M;
             }
 
-            //If account over 100 Kr. 3 procent interest
+            //If account over 100 000 Kr. 3 procent interest
             else if (Balance > 100000)
             {
-                this.Balance = this.Balance * 1.03M;
+                Balance *= 1.03M;
             }
         }
 

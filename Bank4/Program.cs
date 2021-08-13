@@ -120,7 +120,7 @@ namespace Bank4
                 case ConsoleKey.K:
 
                     Console.Clear();
-
+                    Console.WriteLine("--- Konto Oprettelse ---");
                     CreateAccount();
                     break;
 
@@ -129,6 +129,7 @@ namespace Bank4
 
                     Console.Clear();
 
+                    Console.WriteLine("--- Indsæt penge ---");
                     Deposit();
                     break;
 
@@ -137,6 +138,7 @@ namespace Bank4
 
                     Console.Clear();
 
+                    Console.WriteLine("--- Hæv penge ---");
                     Withdraw();
                     break;
 
@@ -144,6 +146,7 @@ namespace Bank4
 
                     Console.Clear();
 
+                    Console.WriteLine("--- Rentetilskrivning ---");
                     Rentetilskrivning();
 
                     break;
@@ -153,13 +156,18 @@ namespace Bank4
 
                     Console.Clear();
 
+                    Console.WriteLine("--- Vis konto saldo ---");
                     ShowBalance();
                     
                     break;
 
                 //Show bank
                 case ConsoleKey.B:
-                    Console.WriteLine(bank.BankSaldo);
+                    Console.Clear();
+
+                    Console.WriteLine("--- Banken Saldo ---");
+                    Console.WriteLine($"Banken saldo: {bank.BankSaldo}");
+
                     break;
 
                 //Exit

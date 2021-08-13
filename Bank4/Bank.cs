@@ -41,6 +41,7 @@ namespace Bank4
         /// <returns></returns>
         public string CreateAccount(string name, AccountType accountType)
         {
+
             //Switch for creating specific account type
             switch (accountType)
             {
@@ -68,7 +69,7 @@ namespace Bank4
 
             accountNumberCounter++;
 
-            return $"Ny {account.AccountType} oprettet til {name} med saldoen {account.Balance:c}";
+            return $"Ny {account.AccountType} oprettet til {name} med saldoen {account.Balance:c2}";
             
         }
 
@@ -179,7 +180,7 @@ namespace Bank4
         public Account FindAccount(int accountNum)
         {
             //Account finder from nummber
-            Account account = acList[acList.FindIndex(l => l._AccountNummber == accountNum)];
+            Account account = acList.Find(l => l._AccountNummber == accountNum);
             return account;
         }
        
