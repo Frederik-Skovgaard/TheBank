@@ -5,15 +5,15 @@ The purpose of this project is to show, that i can document my projects
 
 # Links
 ### Change Log Updates
-[Bank 1](#[Bank-1])
+[Bank Vers. 1](#Bank.Version.1)
 
-[Bank 2](#[Bank-2])
+[Bank Vers. 2](#Bank.Version.2)
 
-[Bank 3](#[Bank-3])
+[Bank Vers. 3](#Bank.Version.3)
 
-[Bank 4](#[Bank-4])
+[Bank Vers. 4](#Bank.Version.4)
 
-[Bank 5](#[Bank-5])
+[Bank Vers. 5](#Bank.Version.5)
 
 # Menu
 ### Vælg venligst
@@ -88,7 +88,7 @@ All notable changes to this project will be documented in this file.
 
 # [Unreleased]
 
-## [Bank 1] - 11-08-21
+## [Bank.Version.1] - 11-08-21
 ### Added
 - [x] Create Account.
 - [x] Create menue.
@@ -96,7 +96,7 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Bank 2] - 11-08-21
+## [Bank.Version.2] - 11-08-21
 ### Added
 - [x] Use methods for the new bank menu.
 - [x] made a new menu with more options.
@@ -106,7 +106,7 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Bank 3] - 12-08-21
+## [Bank.Version.3] - 12-08-21
 ### Added
 - [x] Method for showing all money in the bank.
 - [x] Account counter.
@@ -119,7 +119,7 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Bank 4] - 12-08-21
+## [Bank.Version.4] - 12-08-21
 ### Added
 - [x] Add interest rates to specific account types 
 - [x] Add account types 
@@ -133,7 +133,7 @@ All notable changes to this project will be documented in this file.
 - [x] Account constructoren removed
  
 
-## [Bank 5] - 12-08-21
+## [Bank.Version.5] - 12-08-21
 ### Added
 - [x] Enum Account Type add
 - [x] Add folder BLL & Copy Bank.cs over to folder 
