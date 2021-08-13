@@ -61,3 +61,14 @@ All notable changes to this project will be documented in this file.
 
 ### Removed 
 - [x] Account constructoren removed
+ 
+
+## [Bank 5] - 12-08-21
+### Added
+- [x] Enum Account Type add
+- [x] Add folder BLL & Copy Bank.cs over to folder 
+- [ ] Make Account item list
+- [ ] Add IBank in folder repository 
+
+### Change
+- [x] Change CreateAccount Method to choose enum AccountType 
