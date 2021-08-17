@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace Bank4
 {
-    class AccountRepo
+    public class AccountRepo
     {
         //Get acList
         public List<Account> AccountList { get { return acList; } }
 
-        
         //Get Account nummber counter
         public int AccountNummberCounter { get { return accountNumberCounter; } }
 
         //Account references
-        Account account;
+        private Account account;
 
         //Account List
-        List<Account> acList;
+        private List<Account> acList;
 
         //Keep track of account nummber
-        int accountNumberCounter = 1;
+        private int accountNumberCounter = 1;
 
         //AccountRepo Constructer
         public AccountRepo()

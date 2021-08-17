@@ -7,7 +7,7 @@ namespace Bank4
     public class Bank
     {
         //Reference to AccountRepo
-        AccountRepo account;
+        public AccountRepo accountRepo = new AccountRepo();
 
         //Get Bank Name
         public string BankName { get; }
@@ -20,7 +20,7 @@ namespace Bank4
         string bankName;
 
         //Total sum of money in bank
-        decimal bankSaldo => account.AccountList.Sum(x => x.Balance);
+        decimal bankSaldo => accountRepo.AccountList.Sum(x => x.Balance);
 
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Bank4
         /// </summary>
         public void ChargeInterest()
         {
-            foreach (Account account in account.AccountList)
+            foreach (Account account in accountRepo.AccountList)
             {
                 account.ChargeInterest();
             }
