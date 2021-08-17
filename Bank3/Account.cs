@@ -16,10 +16,13 @@ namespace Bank3
 
         public int _AccountNummber { get; }
 
+        public string BankName { get; set; }
 
         //Method for getting name and balance
         public Account(string name, int account)
         {
+            bankName = "e";
+
             this.Balance = 0;
             //Setting variables to Name
             this.Name = name;

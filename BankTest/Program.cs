@@ -9,7 +9,7 @@ namespace Bank4
 {
 
     
-    public class Program
+    class Program
     {
         //Class Varibale
         static Bank bank;
@@ -21,8 +21,6 @@ namespace Bank4
         static AccountType accountType;
 
         static ConsoleKey acType;
-
-        static AccountRepo accRepo;
 
 
         static void Main(string[] args)
@@ -43,7 +41,7 @@ namespace Bank4
             accountType = AccountChoose(acType);
 
             //Call class account
-            accRepo.CreateAccount(name, accountType);
+            bank.CreateAccount(name, accountType);
 
             Console.Clear();
 
@@ -90,7 +88,7 @@ namespace Bank4
             ////////////////////////////////Start Of Menu 2//////////////////////////////////////////////////
                                                                                                            //
             //Write bank name 2                                                                            //
-            Console.WriteLine(bank.BankName);                                                             //
+            Console.WriteLine(bank.bankName);                                                             //
                                                                                                            //
             //Enter a key                                                                                  //
             Console.WriteLine("Vælg venligst...");                                                         //
@@ -214,7 +212,7 @@ namespace Bank4
             Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
 
             //Call class Account
-            accRepo.CreateAccount(name, accountType);
+            bank.CreateAccount(name, accountType);
         }
 
 
@@ -235,7 +233,7 @@ namespace Bank4
             Console.WriteLine("");
 
             //Deposit the insertet money to account balance
-            Console.WriteLine(accRepo.Deposit(indtast, accountNum));
+            Console.WriteLine(bank.Deposit(indtast, accountNum));
 
             Console.WriteLine("");
             
@@ -257,7 +255,7 @@ namespace Bank4
             Console.WriteLine("");
 
             //Withdraw the insertet money to account balance
-            Console.WriteLine(accRepo.Withdraw(indtast, accountNum));
+            Console.WriteLine(bank.Withdraw(indtast, accountNum));
         }
 
         /// <summary>
@@ -272,7 +270,7 @@ namespace Bank4
             Console.WriteLine("");
 
             //Show balance of account
-            Console.WriteLine(accRepo.TotalBalance(accountNum));
+            Console.WriteLine(bank.TotalBalance(accountNum));
         }
 
         /// <summary>

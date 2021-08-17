@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bank4
 {    
-    public enum AccountType { CheckingAccount, SavingsAccount, MasterCardAccount }
+    enum AccountType { CheckingAccount, SavingsAccount, MasterCardAccount }
 
-    public abstract class Account
+    abstract class Account
     {
         //Readonly public string with the name of the account
         public string Name { get; set; }
