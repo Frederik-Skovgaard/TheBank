@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bank4.Interface;
 
 namespace Bank4
 {
-    public class Bank
+    public class Bank : IBank
     {
         //Reference to AccountRepo
         public AccountRepo accountRepo = new AccountRepo();

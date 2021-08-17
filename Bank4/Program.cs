@@ -16,7 +16,9 @@ namespace Bank4
 
         static bool ShouldLoop = true;
 
-        static string name;
+        static string fName;
+
+        static string lName;
 
         static AccountType accountType;
 
@@ -29,8 +31,11 @@ namespace Bank4
             bank = new Bank("*** Velkommen til EUC Bank 4 ***");
 
             //Write name of user
-            Console.Write("Skriv name på bruger: ");
-            name = Console.ReadLine();
+            Console.Write("Skriv fornavn på bruger: ");
+            fName = Console.ReadLine();
+
+            Console.Write("Skriv efternavn på bruger: ");
+            lName = Console.ReadLine();
 
             Console.WriteLine("");
 
@@ -41,12 +46,12 @@ namespace Bank4
             accountType = AccountChoose(acType);
 
             //Call class account
-            bank.accountRepo.CreateAccount(name, accountType);
+            bank.accountRepo.CreateAccount(fName, lName, accountType);
 
             Console.Clear();
 
             //Show Account info
-            Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
+            Console.WriteLine($"Konto Navn: {fName} {lName}\nKonto Type: {accountType}");
 
             ToContinue();
 
@@ -212,7 +217,7 @@ namespace Bank4
             Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
 
             //Call class Account
-            bank.accountRepo.CreateAccount(name, accountType);
+            bank.accountRepo.CreateAccount(fName, lName, accountType);
         }
 
 

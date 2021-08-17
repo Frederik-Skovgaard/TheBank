@@ -35,7 +35,7 @@ namespace Bank4
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public string CreateAccount(string name, AccountType accountType)
+        public string CreateAccount(string fName, string lName, AccountType accountType)
         {
             
             //Switch for creating specific account type
@@ -43,17 +43,17 @@ namespace Bank4
             {
                 //Checkings account
                 case AccountType.CheckingAccount:
-                    acList.Add(new CheckingAccount(name, accountNumberCounter));
+                    acList.Add(new CheckingAccount(fName, lName, accountNumberCounter));
                     break;
 
                 //Savings account
                 case AccountType.SavingsAccount:
-                    acList.Add(new SavingsAccount(name, accountNumberCounter));
+                    acList.Add(new SavingsAccount(fName, lName, accountNumberCounter));
                     break;
 
                 //MasterCard account
                 case AccountType.MasterCardAccount:
-                    acList.Add(new MasterCardAccount(name, accountNumberCounter));
+                    acList.Add(new MasterCardAccount(fName, lName, accountNumberCounter));
                     break;
                 default:
                     break;
@@ -65,7 +65,7 @@ namespace Bank4
 
             accountNumberCounter++;
 
-            return $"Ny {account.AccountType} oprettet til {name} med saldoen {account.Balance:c2}";
+            return $"Ny {account.AccountType} oprettet til {fName} {lName} med saldoen {account.Balance:c2}";
 
         }
 

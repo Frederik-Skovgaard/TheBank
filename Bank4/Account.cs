@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bank4.Interface;
 
 namespace Bank4
 {    
     public enum AccountType { CheckingAccount, SavingsAccount, MasterCardAccount }
 
-    public abstract class Account
+    public abstract class Account : IAccount, IContact
     {
-        //Readonly public string with the name of the account
-        public string Name { get; set; }
-
+        #region IAccount
         //Get, Set decimal of account balance
         public decimal Balance { get; set; }
 
@@ -26,6 +25,51 @@ namespace Bank4
         /// Charg interst method 
         /// </summary>
         public abstract void ChargeInterest();
+        #endregion
+        #region IContact
+        //Felts Start
+
+        //Customer street
+        string street;
+
+        //Customer postal
+        int postal;
+
+        //Customer city
+        string city;
+
+        //Customer phone nummber
+        int phoneNummber;
+
+        //Felt End
+
+        //Prophitis Start
+
+        //Return customer first name
+        public string FirstName { get; set; }
+        //Return customer last name
+        public string LastName { get; set; }
+
+        //Return customer full name
+        public string FullName { get { return $"{FirstName} {LastName}"; } }
+
+        //Return customer street
+        public string Street { get { return street; }  }
+
+        //Return customer postal
+        public int Postal { get { return postal; } }
+
+        //Return customer city
+        public string City { get { return city; } }
+
+        //Return customer location
+        public string ContactInfo { get { return $"{Street}, {City}, {Postal}"; } }
+
+        //Return customer nummber
+        public int PhoneNummber { get { return phoneNummber; }  }
+
+        //Prophitis End
+        #endregion
 
     }
 
@@ -40,9 +84,11 @@ namespace Bank4
             this.Balance = Balance * 1.005M;
         }
 
-        public CheckingAccount(string name, int accountNummber)
+        public CheckingAccount(string fName, string lName, int accountNummber)
         {
-            this.Name = name;
+            this.FirstName = fName;
+            this.LastName = lName;
+
             this._AccountNummber = accountNummber;
         }
     }
@@ -73,9 +119,11 @@ namespace Bank4
             }
         }
 
-        public SavingsAccount(string name, int accountNummber)
+        public SavingsAccount(string fName, string lName, int accountNummber)
         {
-            this.Name = name;
+            this.FirstName = fName;
+            this.LastName = lName;
+
             this._AccountNummber = accountNummber;
         }
 
@@ -105,9 +153,11 @@ namespace Bank4
             }
         }
 
-        public MasterCardAccount(string name, int accountNummber)
+        public MasterCardAccount(string fName, string lName, int accountNummber)
         {
-            this.Name = name;
+            this.FirstName = fName;
+            this.LastName = lName;
+
             this._AccountNummber = accountNummber;
         }
 
