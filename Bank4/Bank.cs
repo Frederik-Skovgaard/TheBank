@@ -8,13 +8,13 @@ namespace Bank4
     public class Bank : IBank
     {
         //Reference to AccountRepo
-        public AccountRepo accountRepo = new AccountRepo();
+        public AccountRepo accountRepo;
 
         //Get Bank Name
-        public string BankName { get; }
+        public string BankName => bankName;
 
         //Get Bank saldo
-        public decimal BankSaldo {get { return bankSaldo; } }
+        public decimal BankSaldo => bankSaldo;
 
 
         //Bank name
@@ -30,7 +30,6 @@ namespace Bank4
         public Bank(string name)
         {
             bankName = name;
-
         }
 
 

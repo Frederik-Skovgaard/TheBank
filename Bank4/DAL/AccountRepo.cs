@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace Bank4
 {
-    public class AccountRepo
+
+    public abstract class AccountRepo
     {
         //Get acList
-        public List<Account> AccountList { get { return acList; } }
+        public List<Account> AccountList => acList;
 
         //Get Account nummber counter
-        public int AccountNummberCounter { get { return accountNumberCounter; } }
+        public int AccountNummberCounter => accountNumberCounter;
 
         //Account references
         private Account account;
 
         //Account List
-        private List<Account> acList;
+        private List<Account> acList = new List<Account>();
 
         //Keep track of account nummber
         private int accountNumberCounter = 1;
 
-        //AccountRepo Constructer
-        public AccountRepo()
-        {
-            acList = new List<Account>();
-        }
+        
 
 
         /// <summary>
@@ -68,6 +65,9 @@ namespace Bank4
             return $"Ny {account.AccountType} oprettet til {fName} {lName} med saldoen {account.Balance:c2}";
 
         }
+
+        
+        
 
         /// <summary>
         /// Method for depositing money to the account
@@ -185,7 +185,5 @@ namespace Bank4
         }
 
         
-
-
     }
 }

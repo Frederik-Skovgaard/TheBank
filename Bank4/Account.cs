@@ -19,31 +19,12 @@ namespace Bank4
         public int _AccountNummber { get; set; }
 
         //Account Type
-        public AccountType AccountType { get; set; }
-
-        /// <summary>
-        /// Charg interst method 
-        /// </summary>
-        public abstract void ChargeInterest();
+        public AccountType AccountType { get; set; }      
+        
         #endregion
+
+
         #region IContact
-        //Felts Start
-
-        //Customer street
-        string street;
-
-        //Customer postal
-        int postal;
-
-        //Customer city
-        string city;
-
-        //Customer phone nummber
-        int phoneNummber;
-
-        //Felt End
-
-        //Prophitis Start
 
         //Return customer first name
         public string FirstName { get; set; }
@@ -51,25 +32,28 @@ namespace Bank4
         public string LastName { get; set; }
 
         //Return customer full name
-        public string FullName { get { return $"{FirstName} {LastName}"; } }
+        public string FullName => $"{FirstName} {LastName}";
 
         //Return customer street
-        public string Street { get { return street; }  }
+        public string Street { get; set; }
 
         //Return customer postal
-        public int Postal { get { return postal; } }
+        public int Postal { get; set; }
 
         //Return customer city
-        public string City { get { return city; } }
+        public string City { get; set; }
 
         //Return customer location
-        public string ContactInfo { get { return $"{Street}, {City}, {Postal}"; } }
+        public string ContactInfo => $"{Street}, {City}, {Postal}";
 
         //Return customer nummber
-        public int PhoneNummber { get { return phoneNummber; }  }
+        public int PhoneNummber { get; set; }
 
-        //Prophitis End
         #endregion
+
+
+
+        public abstract void ChargeInterest();
 
     }
 
@@ -160,6 +144,8 @@ namespace Bank4
 
             this._AccountNummber = accountNummber;
         }
+
+       
 
     }
 }

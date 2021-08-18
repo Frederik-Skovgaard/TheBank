@@ -1,49 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Bank4.Account">
-    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAgAAAAAAAAAAgAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAMAgAAAAAIAIABgACAIQAAAAAgAAAAMgAAABAAg=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Bank4.CheckingAccount">
-    <Position X="14" Y="3.5" Width="1.5" />
+    <Position X="5.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bank4.SavingsAccount">
-    <Position X="9.5" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bank4.MasterCardAccount">
-    <Position X="11.75" Y="3.5" Width="1.5" />
+    <Position X="3.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Bank4.Bank">
-    <Position X="17.75" Y="1.25" Width="1.5" />
+  <Class Name="Bank4.Bank" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAEAIAAAAAAAAAABAAEAQAAEBAAAAAgQAAAAAI=</HashCode>
+      <HashCode>AAAAgAAAAIAAAAAAAAAAAAAIAAAAEAAAABAgAAAAAAA=</HashCode>
       <FileName>Bank.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bank4.AccountRepo">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAEAAAAAAAACAAABAAEAQBAABAAAAAAQAAAAAI=</HashCode>
+      <FileName>DAL\AccountRepo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bank4.Program">
-    <Position X="19.5" Y="1.25" Width="1.5" />
+    <Position X="14.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>oAAACAEAAAAACAAAAAAABAAMCAAEAAAAEAAABAAAAQI=</HashCode>
+      <HashCode>oAAACAEAAAAACAAAAAAQBAAMCAAABAAAEAAABAAAAQI=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Interface Name="Bank4.Interface.IAccount">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAgAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IAccount.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bank4.Interface.IBank">
+    <Position X="12.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Interface\IBank.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bank4.Interface.IContact">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAIABAAAAIAAAAAAAAAAAIAAAABAAg=</HashCode>
+      <FileName>Interface\IContact.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="Bank4.AccountType">
-    <Position X="16" Y="1.25" Width="1.5" />
+    <Position X="10.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAgAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Account.cs</FileName>

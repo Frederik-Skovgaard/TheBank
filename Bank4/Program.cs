@@ -93,7 +93,7 @@ namespace Bank4
             ////////////////////////////////Start Of Menu 2//////////////////////////////////////////////////
                                                                                                            //
             //Write bank name 2                                                                            //
-            Console.WriteLine(bank.BankName);                                                             //
+            Console.WriteLine(bank.BankName);                                                              //
                                                                                                            //
             //Enter a key                                                                                  //
             Console.WriteLine("Vælg venligst...");                                                         //
@@ -108,7 +108,7 @@ namespace Bank4
             Console.WriteLine("x = Afslut");                                                               //
                                                                                                            //
             //Read the next key press                                                                      //
-            var readKey = Console.ReadKey().Key;                                                           //
+            ConsoleKey readKey = Console.ReadKey().Key;                                                    //
                                                                                                            //
              ////////////////////////////////End Of Menu 2///////////////////////////////////////////////////
 
