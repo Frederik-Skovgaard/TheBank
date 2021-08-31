@@ -27,6 +27,8 @@ namespace Bank4
 
         static void Main(string[] args)
         {
+            
+
             //Call class bank
             bank = new Bank("*** Velkommen til EUC Bank 4 ***");
 
@@ -49,6 +51,7 @@ namespace Bank4
             bank.accountRepo.CreateAccount(fName, lName, accountType);
 
             Console.Clear();
+            
 
             //Show Account info
             Console.WriteLine($"Konto Navn: {fName} {lName}\nKonto Type: {accountType}");
@@ -199,9 +202,12 @@ namespace Bank4
         /// </summary>
         static void CreateAccount()
         {
-            //Writ account name
-            Console.Write("Indtast kundens navn: ");
-            string name = Console.ReadLine();
+            //Write name of user
+            Console.Write("Skriv fornavn på bruger: ");
+            fName = Console.ReadLine();
+
+            Console.Write("Skriv efternavn på bruger: ");
+            lName = Console.ReadLine();
 
             Console.WriteLine("");
 
@@ -214,7 +220,7 @@ namespace Bank4
             Console.Clear();
 
             //Show Account info
-            Console.WriteLine($"Konto Navn: {name}\nKonto Type: {accountType}");
+            Console.WriteLine($"Konto Navn: {fName} {lName}\nKonto Type: {accountType}");
 
             //Call class Account
             bank.accountRepo.CreateAccount(fName, lName, accountType);

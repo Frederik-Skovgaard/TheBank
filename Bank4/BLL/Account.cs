@@ -22,8 +22,6 @@ namespace Bank4
         public AccountType AccountType { get; set; }      
         
         #endregion
-
-
         #region IContact
 
         //Return customer first name

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.IO;
 
 namespace Bank4
 {
 
-    public abstract class AccountRepo
+    public class AccountRepo
     {
         //Get acList
         public List<Account> AccountList => acList;
@@ -61,6 +63,9 @@ namespace Bank4
             account = FindAccount(accountNumberCounter);
 
             accountNumberCounter++;
+
+
+            Task asyncTask = WriteFille(@"C:\Users\fred56b8\Documents\", "AccountText.txt", $"Ny {account.AccountType} oprettet til {fName} {lName} med saldoen {account.Balance:c2}\n");
 
             return $"Ny {account.AccountType} oprettet til {fName} {lName} med saldoen {account.Balance:c2}";
 
@@ -183,7 +188,17 @@ namespace Bank4
             account = acList.Find(l => l._AccountNummber == accountNum);
             return account;
         }
-
         
+
+
+        public static async Task WriteFille(string dir, string fill, string content)
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(dir, fill)))
+            {
+                await outputFile.WriteAsync(content);
+            }
+        }
+
+
     }
 }

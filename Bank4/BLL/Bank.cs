@@ -5,10 +5,9 @@ using Bank4.Interface;
 
 namespace Bank4
 {
-    public class Bank : IBank
+    class Bank : IBank
     {
-        //Reference to AccountRepo
-        public AccountRepo accountRepo;
+        public AccountRepo accountRepo = new AccountRepo();
 
         //Get Bank Name
         public string BankName => bankName;
